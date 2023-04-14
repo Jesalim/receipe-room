@@ -1,19 +1,4 @@
-# name: ReceipeRoomCI
-# on: 
-#   workflow_dispatch:
-#   push:
-#     branches: [main]
-#   pull_request:
-#     branches: [main]
-# jobs:
-#   rspec:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: ruby/setup-ruby@v1
-#         with:
-#           ruby-version: '2.7.6'
-#       - run: cd api && bundle install
+
 name: RecipeRoomCI
 on:
   workflow_dispatch:
@@ -43,6 +28,18 @@ jobs:
         run: |
           cd api
           gem install rspec
+
+      - name: Build React frontend
+        run: |
+          cd client
+          npm install
+          npm run build
+
+      - name: Bundle dependencies
+        uses: jvandemo/github-action-bundle-dependencies@v1
+        with:
+          working-directory: client
+
 
       - name: Run RSpec
         run: |
