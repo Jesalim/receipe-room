@@ -15,6 +15,7 @@
 #           ruby-version: '2.7.6'
 #       - run: cd api && bundle install
 name: RecipeRoomCI
+
 on:
   workflow_dispatch:
   push:
@@ -23,30 +24,29 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  rspec:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          node-version: '14.x'
+          ruby-version: '2.7.6'
 
-      - name: Install dependencies
+      - name: Install dependencies for API
+        run: |
+          cd api
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+
+      - name: Install dependencies for Client
         run: |
           cd client
           npm install
-          cd ../api
-          bundle install --jobs 4 --retry 3
 
-      - name: Build React app
-        run: |
-          cd client
-          npm run build
-
-      - name: Run RSpec tests
+      - name: Run RSpec
         run: |
           cd api
           bundle exec rspec
