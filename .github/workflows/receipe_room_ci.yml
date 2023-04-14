@@ -23,16 +23,11 @@ jobs:
           cd api
           bundle install --jobs 4 --retry 3
 
-      - name: Install RSpec
-        run: |
-          cd api
-          gem install rspec
-
       - name: Build React frontend
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-        run: |
+      - run: |
           cd client
           npm install
           npm run build
@@ -47,6 +42,11 @@ jobs:
             *.lock
             *.log
             *.tgz
+
+      - name: Install RSpec
+        run: |
+          cd api
+          gem install rspec
 
       - name: Run RSpec
         run: |
