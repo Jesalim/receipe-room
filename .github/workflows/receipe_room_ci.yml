@@ -1,4 +1,3 @@
-
 name: RecipeRoomCI
 on:
   workflow_dispatch:
@@ -30,16 +29,24 @@ jobs:
           gem install rspec
 
       - name: Build React frontend
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
         run: |
           cd client
           npm install
           npm run build
+          npm pack
+          mv recipe-room-client-*.tgz ../api/
 
       - name: Bundle dependencies
         uses: jvandemo/github-action-bundle-dependencies@v1
         with:
-          working-directory: client
-
+          directory: api
+          exclude: |
+            *.lock
+            *.log
+            *.tgz
 
       - name: Run RSpec
         run: |
