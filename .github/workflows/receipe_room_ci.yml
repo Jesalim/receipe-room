@@ -1,16 +1,52 @@
-name: ReceipeRoomCI
-on: 
+# name: ReceipeRoomCI
+# on: 
+#   workflow_dispatch:
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [main]
+# jobs:
+#   rspec:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: ruby/setup-ruby@v1
+#         with:
+#           ruby-version: '2.7.6'
+#       - run: cd api && bundle install
+name: RecipeRoomCI
+on:
   workflow_dispatch:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+
 jobs:
-  rspec:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          ruby-version: '2.7.6'
-      - run: cd api && bundle install
+          node-version: '14.x'
+
+      - name: Install dependencies
+        run: |
+          cd client
+          npm install
+          cd ../api
+          bundle install --jobs 4 --retry 3
+
+      - name: Build React app
+        run: |
+          cd client
+          npm run build
+
+      - name: Run RSpec tests
+        run: |
+          cd api
+          bundle exec rspec
