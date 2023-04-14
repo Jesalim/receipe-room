@@ -15,7 +15,6 @@
 #           ruby-version: '2.7.6'
 #       - run: cd api && bundle install
 name: RecipeRoomCI
-
 on:
   workflow_dispatch:
   push:
@@ -35,16 +34,15 @@ jobs:
         with:
           ruby-version: '2.7.6'
 
-      - name: Install dependencies for API
+      - name: Install dependencies
         run: |
           cd api
-          gem install bundler
           bundle install --jobs 4 --retry 3
 
-      - name: Install dependencies for Client
+      - name: Install RSpec
         run: |
-          cd client
-          npm install
+          cd api
+          gem install rspec
 
       - name: Run RSpec
         run: |
