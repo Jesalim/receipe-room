@@ -29,10 +29,10 @@ jobs:
           cd api
           bundle exec rspec
 
-      jest:
-      runs-on: ubuntu-latest
+  jest:
+    runs-on: ubuntu-latest
 
-      steps:
+    steps:
       - uses: actions/checkout@v3
 
       - run: cd client && npm install
