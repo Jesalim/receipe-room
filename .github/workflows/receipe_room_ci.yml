@@ -28,3 +28,12 @@ jobs:
         run: |
           cd api
           bundle exec rspec
+
+      jest:
+      runs-on: ubuntu-latest
+
+      steps:
+      - uses: actions/checkout@v3
+
+      - run: cd client && npm install
+      - run: cd client && npm test a
