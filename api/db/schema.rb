@@ -7,6 +7,7 @@
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
+#
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_04_23_122259) do
@@ -30,10 +31,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_23_122259) do
   create_table "recipes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name"
-    t.integer "rating"
-    t.string "ingredients"
     t.string "country"
+    t.integer "rating"
     t.integer "people_served"
+    t.string "ingredients"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
