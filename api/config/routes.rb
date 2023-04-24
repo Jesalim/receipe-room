@@ -23,5 +23,5 @@ Rails.application.routes.draw do
   delete '/recipes/:id', to: 'recipes#destroy'
   get '/recipes', to: 'recipes#index'
   get '/recipes/:id', to: 'recipes#show'
-  post "/search", to: "recipes#search"
+  get "/search", to: "recipes#search"
 end
