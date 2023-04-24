@@ -21,5 +21,12 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+ adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: pg-production-jesalim-1.aivencloud.com
+  port: 10861
+  username: 'avnadmin'
+  password: 'AVNS_QEa7nkogzCNlkBjl0J9'
+  database: defaultdb
+
