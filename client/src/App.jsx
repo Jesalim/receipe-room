@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Recipes from './components/Recipes';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Groups from './components/Groups';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Recipes />
+      <Groups />
     </>
   );
 }
