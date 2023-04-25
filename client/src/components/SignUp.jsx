@@ -14,7 +14,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
       e.preventDefault()
       setErrors([])
-      fetch('https://receipe.onrender.com/users', {
+      fetch('/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
