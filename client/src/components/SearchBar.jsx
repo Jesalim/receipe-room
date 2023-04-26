@@ -90,6 +90,13 @@ const appetizers = [
     description: 'Cooked shrimp served with cocktail sauce',
   },
   {
+    id: 4,
+    name: 'Shrimp Cocktail',
+    image:
+      'https://images.unsplash.com/photo-1550547661-22fcfb260ada?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+    description: 'Cooked shrimp served with cocktail sauce',
+  },
+  {
     id: 5,
     name: 'Shrimp Cocktail',
     image:
