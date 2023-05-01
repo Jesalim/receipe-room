@@ -59,42 +59,42 @@ const appetizers = [
     id: 1,
     name: 'Bruschetta',
     image:
-      'https://images.unsplash.com/photo-1550547661-22fcfb260ada?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+      '../src/assets/bruschetta.jpg',
     description: 'Toasted bread topped with tomatoes and basil',
   },
   {
     id: 2,
     name: 'Spring Rolls',
     image:
-      'https://images.unsplash.com/photo-1605178763936-9c32b40f06a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+      '../src/assets/springrolls.jpg',
     description: 'Deep-fried rolls filled with vegetables and meat',
   },
   {
     id: 3,
     name: 'Shrimp Cocktail',
     image:
-      'https://images.unsplash.com/photo-1550547661-22fcfb260ada?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+      '../src/assets/shrimp.jpg',
     description: 'Cooked shrimp served with cocktail sauce',
   },
   {
     id: 4,
     name: 'Shrimp Cocktail',
     image:
-      'https://images.unsplash.com/photo-1550547661-22fcfb260ada?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+      '../src/assets/shrimpcocktail2.jpg',
     description: 'Cooked shrimp served with cocktail sauce',
   },
   {
     id: 5,
     name: 'Shrimp Cocktail',
     image:
-      'https://images.unsplash.com/photo-1550547661-22fcfb260ada?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+      '../src/assets/Mexican-Shrimp-Cocktail-sq.jpg',
     description: 'Cooked shrimp served with cocktail sauce',
   },
   {
     id: 6,
     name: 'Shrimp Cocktail',
     image:
-      'https://images.unsplash.com/photo-1550547661-22fcfb260ada?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+      '../src/assets/shrimp-cocktail.jpg',
     description: 'Cooked shrimp served with cocktail sauce',
   },
 ];
