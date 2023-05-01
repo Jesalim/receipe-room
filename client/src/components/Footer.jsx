@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer-logo">
-        <img src="../src/assets/login-logo.png" alt="" />
+        <img src="../src/assets/login-logo.png" alt="logo" />
         <p>Allrecipes is part of the Dotdash Meredith publishing family.</p>
         <p> © 2023 Recipe Room.All rights reserved.</p>
       </div>
