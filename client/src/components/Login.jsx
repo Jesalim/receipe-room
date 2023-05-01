@@ -6,14 +6,13 @@ const Login = () => {
   return (
     <>
       <div>
-        <div className="absolute top-0 left-0 -z-10 h-[100vh] w-screen">
+        <div className="absolute top-0 left-0 -z-10 h-[100vh]" id='login'>
           <img
             src={spicesImage}
             alt="counter top"
-            className="w-full h-full object-cover"
           />
         </div>
-        <div className="bg-login-gradient h-[100vh] overflow-hidden w-screen text-buff">
+        <div className="bg-login-gradient h-[100vh] overflow-hidden text-buff" id='login-overlay'>
           <div
             className="w-screen h-screen flex items-center justify-center opacity-90 rounded-[14px]"
             style={{

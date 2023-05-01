@@ -6,6 +6,7 @@ import Recipes from './components/Recipes';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Groups from './components/Groups';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,10 +18,11 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/group" element={<Groups />} />
         </Routes>
       </BrowserRouter>
-      <Recipes />
-      <Groups />
+      <Footer />
     </>
   );
 }
