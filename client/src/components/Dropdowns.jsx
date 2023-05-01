@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   FormControl,
@@ -118,8 +118,8 @@ export default function Dropdowns() {
   };
 
   return (
-    <BrowserRouter>
-      <div className={`${classes.root} bg-smoke`}>
+    <>
+      <div className={`${classes.root}`}>
         <FormControl
           className={`${classes.formControl} w-[300px]`}
           style={{ backgroundColor: '#141414' }}>
@@ -182,7 +182,7 @@ export default function Dropdowns() {
                 style={{ marginTop: '-5rem' }}>
                 <div className="flex justify-center w-full mt-[3rem]">
                   <Link to={`/appetizers/${appetizer.id}`}>
-                    <Card className={classes.card}>
+                    <Card className={classes.card} id='card-shadow'>
                       <CardActionArea
                         onClick={() => handleAppetizerSelect(appetizer)}>
                         <CardMedia
@@ -215,6 +215,6 @@ export default function Dropdowns() {
           </Grid>
         )}
       </div>
-    </BrowserRouter>
+    </>
   );
 }
