@@ -63,7 +63,10 @@ const SignUp = () => {
               </div>
               <div className="mt-5">
                 <button className="bg-bole bg-opacity-80 hover:bg-bean hover:text-buff hover:bg-opacity-80 text-smoke text-[20px] uppercase font-black py-2 px-8 mt-2 mx-auto rounded w-40">
+                  <Link to='/home'>
                   SignUp
+                  </Link>
+
                 </button>
               </div>
               <div className="mt-6 text-center">
